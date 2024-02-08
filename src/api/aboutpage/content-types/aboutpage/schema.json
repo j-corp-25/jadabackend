@@ -24,11 +24,22 @@
       "type": "text"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "certificates": {
+      "type": "component",
+      "repeatable": true,
+      "component": "block.certificates"
+    },
+    "about": {
+      "type": "component",
+      "repeatable": false,
+      "component": "block.aboutinfo"
     }
   }
 }

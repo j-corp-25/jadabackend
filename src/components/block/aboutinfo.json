@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_block_aboutinfos",
+  "info": {
+    "displayName": "aboutinfo",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "info": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_block_certificates",
+  "info": {
+    "displayName": "certificates"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
