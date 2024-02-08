@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "servicepages",
+  "info": {
+    "singularName": "servicepage",
+    "pluralName": "servicepages",
+    "displayName": "Servicepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "services": {
+      "displayName": "Services",
+      "type": "component",
+      "repeatable": true,
+      "component": "block.services"
+    }
+  }
+}

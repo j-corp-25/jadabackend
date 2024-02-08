@@ -362,83 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiAboutpageAboutpage extends Schema.SingleType {
-  collectionName: 'aboutpages';
-  info: {
-    singularName: 'aboutpage';
-    pluralName: 'aboutpages';
-    displayName: 'aboutpage';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    user: Attribute.Relation<
-      'api::aboutpage.aboutpage',
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
-    first_para: Attribute.Text;
-    second_para: Attribute.Text;
-    image: Attribute.Media;
-    certificates: Attribute.Component<'block.certificates', true>;
-    about: Attribute.Component<'block.aboutinfo'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::aboutpage.aboutpage',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::aboutpage.aboutpage',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiHomepageHomepage extends Schema.SingleType {
-  collectionName: 'homepages';
-  info: {
-    singularName: 'homepage';
-    pluralName: 'homepages';
-    displayName: 'homepage';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    sub_title: Attribute.String;
-    page_text: Attribute.Text;
-    user: Attribute.Relation<
-      'api::homepage.homepage',
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::homepage.homepage',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::homepage.homepage',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -812,7 +735,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -841,6 +763,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -858,6 +781,243 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutpageAboutpage extends Schema.SingleType {
+  collectionName: 'aboutpages';
+  info: {
+    singularName: 'aboutpage';
+    pluralName: 'aboutpages';
+    displayName: 'aboutpage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    user: Attribute.Relation<
+      'api::aboutpage.aboutpage',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    first_para: Attribute.Text;
+    second_para: Attribute.Text;
+    image: Attribute.Media;
+    certificates: Attribute.Component<'block.certificates', true>;
+    about: Attribute.Component<'block.aboutinfo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::aboutpage.aboutpage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::aboutpage.aboutpage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDashboardpageDashboardpage extends Schema.SingleType {
+  collectionName: 'dashboardpages';
+  info: {
+    singularName: 'dashboardpage';
+    pluralName: 'dashboardpages';
+    displayName: 'Dashboardpage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    master: Attribute.DynamicZone<
+      [
+        'block.aboutinfo',
+        'block.faqs',
+        'block.resources',
+        'block.services',
+        'block.testimonials',
+        'block.certificates'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dashboardpage.dashboardpage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dashboardpage.dashboardpage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFaqpageFaqpage extends Schema.SingleType {
+  collectionName: 'faqpages';
+  info: {
+    singularName: 'faqpage';
+    pluralName: 'faqpages';
+    displayName: 'Faqpage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    faq: Attribute.Component<'block.faqs', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::faqpage.faqpage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::faqpage.faqpage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHomepageHomepage extends Schema.SingleType {
+  collectionName: 'homepages';
+  info: {
+    singularName: 'homepage';
+    pluralName: 'homepages';
+    displayName: 'homepage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    sub_title: Attribute.String;
+    page_text: Attribute.Text;
+    user: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiResourcepageResourcepage extends Schema.SingleType {
+  collectionName: 'resourcepages';
+  info: {
+    singularName: 'resourcepage';
+    pluralName: 'resourcepages';
+    displayName: 'Resourcepage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    resource: Attribute.Component<'block.resources', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::resourcepage.resourcepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::resourcepage.resourcepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServicepageServicepage extends Schema.SingleType {
+  collectionName: 'servicepages';
+  info: {
+    singularName: 'servicepage';
+    pluralName: 'servicepages';
+    displayName: 'Servicepage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    services: Attribute.Component<'block.services', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::servicepage.servicepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::servicepage.servicepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTestimonialpageTestimonialpage extends Schema.SingleType {
+  collectionName: 'testimonialpages';
+  info: {
+    singularName: 'testimonialpage';
+    pluralName: 'testimonialpages';
+    displayName: 'Testimonialpage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    testimonial: Attribute.Component<'block.testimonials', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::testimonialpage.testimonialpage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::testimonialpage.testimonialpage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -868,8 +1028,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::aboutpage.aboutpage': ApiAboutpageAboutpage;
-      'api::homepage.homepage': ApiHomepageHomepage;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -878,6 +1036,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::aboutpage.aboutpage': ApiAboutpageAboutpage;
+      'api::dashboardpage.dashboardpage': ApiDashboardpageDashboardpage;
+      'api::faqpage.faqpage': ApiFaqpageFaqpage;
+      'api::homepage.homepage': ApiHomepageHomepage;
+      'api::resourcepage.resourcepage': ApiResourcepageResourcepage;
+      'api::servicepage.servicepage': ApiServicepageServicepage;
+      'api::testimonialpage.testimonialpage': ApiTestimonialpageTestimonialpage;
     }
   }
 }

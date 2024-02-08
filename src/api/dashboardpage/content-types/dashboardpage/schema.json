@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "dashboardpages",
+  "info": {
+    "singularName": "dashboardpage",
+    "pluralName": "dashboardpages",
+    "displayName": "Dashboardpage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "master": {
+      "type": "dynamiczone",
+      "components": [
+        "block.aboutinfo",
+        "block.faqs",
+        "block.resources",
+        "block.services",
+        "block.testimonials",
+        "block.certificates"
+      ]
+    }
+  }
+}

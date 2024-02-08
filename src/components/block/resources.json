@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_block_resources",
+  "info": {
+    "displayName": "Resources"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

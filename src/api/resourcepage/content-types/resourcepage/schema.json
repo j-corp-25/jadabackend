@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "resourcepages",
+  "info": {
+    "singularName": "resourcepage",
+    "pluralName": "resourcepages",
+    "displayName": "Resourcepage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "resource": {
+      "displayName": "Resources",
+      "type": "component",
+      "repeatable": true,
+      "component": "block.resources"
+    }
+  }
+}
