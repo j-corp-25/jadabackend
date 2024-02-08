@@ -10,7 +10,6 @@ Icon
 .Trashes
 ._*
 
-
 ############################
 # Linux
 ############################
@@ -112,3 +111,10 @@ exports
 dist
 build
 .strapi-updater.json
+
+
+
+package-lock.json
+
+# path: ./.gitignore
+package-lock.json
