@@ -866,12 +866,13 @@ export interface ApiFaqpageFaqpage extends Schema.SingleType {
     singularName: 'faqpage';
     pluralName: 'faqpages';
     displayName: 'Faqpage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    faq: Attribute.Component<'block.faqs', true>;
+    faqs: Attribute.Component<'block.faqs', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -933,12 +934,13 @@ export interface ApiResourcepageResourcepage extends Schema.SingleType {
     singularName: 'resourcepage';
     pluralName: 'resourcepages';
     displayName: 'Resourcepage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    resource: Attribute.Component<'block.resources', true>;
+    resources: Attribute.Component<'block.resources', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -994,12 +996,13 @@ export interface ApiTestimonialpageTestimonialpage extends Schema.SingleType {
     singularName: 'testimonialpage';
     pluralName: 'testimonialpages';
     displayName: 'Testimonialpage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    testimonial: Attribute.Component<'block.testimonials', true>;
+    testimonials: Attribute.Component<'block.testimonials', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
