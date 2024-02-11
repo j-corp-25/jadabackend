@@ -1,7 +1,8 @@
 {
   "collectionName": "components_block_certificates",
   "info": {
-    "displayName": "certificates"
+    "displayName": "certificates",
+    "description": ""
   },
   "options": {},
   "attributes": {

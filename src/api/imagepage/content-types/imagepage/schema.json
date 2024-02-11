@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "imagepages",
+  "info": {
+    "singularName": "imagepage",
+    "pluralName": "imagepages",
+    "displayName": "Imagepage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Heroimage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Aboutimage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

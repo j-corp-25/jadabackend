@@ -15,6 +15,7 @@ export interface BlockCertificates extends Schema.Component {
   collectionName: 'components_block_certificates';
   info: {
     displayName: 'certificates';
+    description: '';
   };
   attributes: {
     title: Attribute.String;

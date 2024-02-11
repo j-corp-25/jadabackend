@@ -12,11 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
-    },
     "first_para": {
       "type": "text"
     },
@@ -31,15 +26,13 @@
         "images"
       ]
     },
+    "info": {
+      "type": "text"
+    },
     "certificates": {
       "type": "component",
       "repeatable": true,
       "component": "block.certificates"
-    },
-    "about": {
-      "type": "component",
-      "repeatable": false,
-      "component": "block.aboutinfo"
     }
   }
 }

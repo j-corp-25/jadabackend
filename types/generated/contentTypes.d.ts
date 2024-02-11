@@ -793,16 +793,11 @@ export interface ApiAboutpageAboutpage extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    user: Attribute.Relation<
-      'api::aboutpage.aboutpage',
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
     first_para: Attribute.Text;
     second_para: Attribute.Text;
     image: Attribute.Media;
+    info: Attribute.Text;
     certificates: Attribute.Component<'block.certificates', true>;
-    about: Attribute.Component<'block.aboutinfo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -814,45 +809,6 @@ export interface ApiAboutpageAboutpage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::aboutpage.aboutpage',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiDashboardpageDashboardpage extends Schema.SingleType {
-  collectionName: 'dashboardpages';
-  info: {
-    singularName: 'dashboardpage';
-    pluralName: 'dashboardpages';
-    displayName: 'Dashboardpage';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    master: Attribute.DynamicZone<
-      [
-        'block.aboutinfo',
-        'block.faqs',
-        'block.resources',
-        'block.services',
-        'block.testimonials',
-        'block.certificates'
-      ]
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::dashboardpage.dashboardpage',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::dashboardpage.dashboardpage',
       'oneToOne',
       'admin::user'
     > &
@@ -897,6 +853,7 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     singularName: 'homepage';
     pluralName: 'homepages';
     displayName: 'homepage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -905,11 +862,6 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     title: Attribute.String;
     sub_title: Attribute.String;
     page_text: Attribute.Text;
-    user: Attribute.Relation<
-      'api::homepage.homepage',
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -921,6 +873,38 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::homepage.homepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiImagepageImagepage extends Schema.SingleType {
+  collectionName: 'imagepages';
+  info: {
+    singularName: 'imagepage';
+    pluralName: 'imagepages';
+    displayName: 'Imagepage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Logo: Attribute.Media;
+    Heroimage: Attribute.Media;
+    Aboutimage: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::imagepage.imagepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::imagepage.imagepage',
       'oneToOne',
       'admin::user'
     > &
@@ -1040,9 +1024,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::aboutpage.aboutpage': ApiAboutpageAboutpage;
-      'api::dashboardpage.dashboardpage': ApiDashboardpageDashboardpage;
       'api::faqpage.faqpage': ApiFaqpageFaqpage;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::imagepage.imagepage': ApiImagepageImagepage;
       'api::resourcepage.resourcepage': ApiResourcepageResourcepage;
       'api::servicepage.servicepage': ApiServicepageServicepage;
       'api::testimonialpage.testimonialpage': ApiTestimonialpageTestimonialpage;
