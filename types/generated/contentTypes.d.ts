@@ -795,7 +795,6 @@ export interface ApiAboutpageAboutpage extends Schema.SingleType {
   attributes: {
     first_para: Attribute.Text;
     second_para: Attribute.Text;
-    image: Attribute.Media;
     info: Attribute.Text;
     certificates: Attribute.Component<'block.certificates', true>;
     createdAt: Attribute.DateTime;
